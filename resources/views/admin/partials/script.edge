@@ -1,0 +1,43 @@
+<!-- jQuery -->
+{{ script('assets-admin/plugins/jquery/jquery.min') }}
+{{ script('assets-admin/plugins/jquery-ui/jquery-ui.min') }}
+{{ script('assets-admin/plugins/bootstrap/js/bootstrap.bundle.min') }}
+{{ script('assets-admin/plugins/chart.js/Chart.min') }}
+{{--  {{ script('assets-admin/plugins/sparklines/sparkline') }}  --}}
+{{ script('assets-admin/plugins/jqvmap/jquery.vmap.min') }}
+{{ script('assets-admin/plugins/jqvmap/maps/jquery.vmap.usa') }}
+{{ script('assets-admin/plugins/jquery-knob/jquery.knob.min') }}
+{{ script('assets-admin/plugins/moment/moment.min') }}
+{{ script('assets-admin/plugins/daterangepicker/daterangepicker') }}
+{{ script('assets-admin/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min') }}
+{{ script('assets-admin/plugins/summernote/summernote-bs4.min') }}
+{{ script('assets-admin/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min') }}
+{{ script('dist/js/adminlte') }}
+{{ script('assets-admin/dist/js/pages/dashboard') }}
+{{ script('assets-admin/dist/js/demo') }}
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+
+<script src="{{ assetsUrl('assets-admin/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+<script src="{{ assetsUrl('assets-admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{ assetsUrl('assets-admin/plugins/datatables-responsive/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{ assetsUrl('assets-admin/plugins/datatables-responsive/js/responsive.bootstrap4.min.js')}}"></script>
+
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true,
+      "autoWidth": false,
+    });
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+</script>

@@ -1,0 +1,72 @@
+*instal cli untuk global
+	--> install i -g @adonisjs/cli
+
+*buat projek
+	--> adonis new nama_project
+
+*menjalankan project
+	--> adonis serve --dev
+
+*atur routing di start/routes.js
+	--> contoh : Route.get('/', () => 'Hello World')
+
+*buat controller
+	--> adonis make:controller nama_controller
+
+*buat view
+	--> adonis make:view nama_view
+	--> ext langsung .edge
+
+*buat model
+	--> adonis make:model nama_model	
+
+*mengatur agar bisa menggunakan mysql
+	--> instal == npm install mysql --save
+
+*buat migration
+	--> adonis make:migration nama_migration
+
+*menjalankan migration
+	--> adonis migration:run
+
+
+
+* untuk hapus gambar/update gambar
+	--> instal == adonis install @adonisjs/drive
+	--> kemudian di start/app.js tambhakan == '@adonisjs/drive/providers/DriveProvider'
+	--> kemudian pada bagian config/drive.js atur jadi berikut ini:
+		local: {
+      			root: Helpers.publicPath(),
+      			driver: 'local'
+    			},
+
+
+* untuk validator
+	-->instal == adonis install @adonisjs/validator
+	--> kemudian di start/app.js tambahkan == '@adonisjs/validator/providers/ValidatorProvider'
+	--> kemudian untuk membuat validator ada 2 cara
+		+ dengan di controller langsung
+			-const rules = {
+				email: 'required|email|unique:users,email',
+      				password: 'required'
+ 			}
+
+			const validation = await validate(request.all(), rules)
+
+	    	        if (validation.fails()) {
+	  	     	   session
+      				.withErrors(validation.messages())
+				.flashExcept(['password'])
+			        return response.redirect('back')
+    			}
+
+			return 'Validation passed'
+
+		+ dengan pemasangan validator di route
+			^ buat validator = adonis make:validator nama_validator
+
+
+
+*membuat middleware
+	--> hak akses jika sudah/belum login
+	--> adonis make:middleware CountryDetector

@@ -1,0 +1,68 @@
+@layout('admin.partials.app')
+@section('content')
+
+<div class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1 class="m-0 text-dark">Dashboard</h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Dashboard v1</li>
+          </ol>
+        </div><!-- /.col -->
+      </div><!-- /.row -->
+    </div>
+    <!-- /.container-fluid -->
+</div>
+<section class="content">
+    <div class="container-fluid">
+        <!-- Small boxes (Stat box) -->
+        <div class="row">
+        <div class="col-12">
+            <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">{{ title }}</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                @if(flashMessage('pesan'))
+                  <div class="alert alert-success">
+                    <span>{{ flashMessage('pesan') }}</span>
+                  </div>
+                @endif
+                <a href="{{ route('siswa.tambah') }}" class="mb-2 btn btn-primary">Tambah Data</a>
+                <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                      <th>No</th>
+                      <th>Nama</th>
+                      <th>Foto</th>
+                      <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  @each(data in siswa)
+                  <tr>
+                    <td>{{ ($loop.index + 1) }}</td>
+                    <td>{{data.siswa_nama}}</td>
+                    <td>
+                      <img src="{{ assetsUrl('/img/siswa/') }}{{data.siswa_foto}}" style="width: 100px;"></td>
+                    <td>
+                      <a href="{{ route('siswa.edit', {id : data.siswa_id}) }}" class="btn btn-warning">Edit</a>
+                      <a href="{{ route('siswa.hapus', {id : data.siswa_id}) }}" class="btn btn-danger">Hapus</a>
+                    </td>
+                  </tr>
+                  @endeach
+                </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+</section>
+
+@endsection

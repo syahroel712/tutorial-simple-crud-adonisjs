@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 3 | Dashboard</title>
+  @include('admin.partials.header')
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+
+  @include('admin.partials.sidebar')
+  <div class="content-wrapper">
+  <!-- Content Wrapper. Contains page content -->
+    @!section('content')
+  <!-- /.content-wrapper -->
+  </div>
+  <!-- /.content-wrapper -->
+  @include('admin.partials.footer')
+  
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+@include('admin.partials.script')
+</body>
+</html>
