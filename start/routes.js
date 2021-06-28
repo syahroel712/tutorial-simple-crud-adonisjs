@@ -40,3 +40,11 @@ Route.post("/admin/siswa/add", "Admin/SiswaController.add").as('siswa.add').vali
 Route.get("/admin/siswa/edit/:id", "Admin/SiswaController.edit").as('siswa.edit').middleware(['Authenticate']);
 Route.post("/admin/siswa/update/:id", "Admin/SiswaController.update").as('siswa.update').validator('ValidasiSiswa').middleware(['Authenticate']);
 Route.get("/admin/siswa/hapus/:id", "Admin/SiswaController.hapus").as('siswa.hapus').middleware(['Authenticate']);
+
+
+// routing api siswa
+Route.get("api/siswa", "Api/ApiSiswaController.index").as('api.siswa');
+Route.post("api/siswa/add", "Api/ApiSiswaController.add").as('api.siswa.add');
+Route.get("api/siswa/edit/:id", "Api/ApiSiswaController.edit").as('api.siswa.edit');
+Route.post("api/siswa/update/:id", "Api/ApiSiswaController.update").as('api.siswa.update');
+Route.get("api/siswa/hapus/:id", "Api/ApiSiswaController.hapus").as('api.siswa.hapus')

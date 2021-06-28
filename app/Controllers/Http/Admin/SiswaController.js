@@ -198,7 +198,6 @@ class SiswaController {
     // proses balik ke route awal
     response.redirect('/admin/siswa', true)
   }
-
 }
 
 module.exports = SiswaController;

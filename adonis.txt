@@ -70,3 +70,21 @@
 *membuat middleware
 	--> hak akses jika sudah/belum login
 	--> adonis make:middleware CountryDetector
+
+
+
+
+
+
+
+
+
+
+
+
+//===============================================================
+* jika membuat api maka di bagian config/shield.js atur
+	filterUris: [], ==>  filterUris: ['/api/(.*)'],
+
+
+
